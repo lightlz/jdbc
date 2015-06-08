@@ -15,7 +15,6 @@ setXXXStream() 方法需要一个额外的参数，该参数是除了参数占�
 假如我们到要上传一个名为 XML\_Data.xml 的 XML 文件到数据库的表中。下面是该 XML 文件的内容-
 
 ```
-
 <?xml version="1.0"?>
 <Employee>
 <id>100</id>
@@ -24,8 +23,6 @@ setXXXStream() 方法需要一个额外的参数，该参数是除了参数占�
 <Salary>10000</Salary>
 <Dob>18-08-1978</Dob>
 <Employee>
-
-
 ```
 
 将该 XML 文件和你要运行的示例保存在相同的目录的。
@@ -35,7 +32,6 @@ setXXXStream() 方法需要一个额外的参数，该参数是除了参数占�
 将下面的示例拷贝并粘帖到 JDBCExample.java 中，编译并运行它，如下所示-
 
 ```
-
 // Import required packages
 import java.sql.*;
 import java.io.*;
@@ -144,24 +140,18 @@ public static void createXMLTable(Statement stmt)
    stmt.executeUpdate(streamingDataSql);
 }//end createXMLTable
 }//end JDBCExample
-
-
 ```
 
 现在，让我们用下面的命令编译上面的代码-
 
 ```
-
 C:\>javac JDBCExample.java
 C:\>
-
-
 ```
 
 当你运行 **JDBCExample** 时，它将展示下面的结果-
 
 ```
-
 C:\>java JDBCExample
 Connecting to database...
 Creating XML_Data table...
@@ -176,5 +166,4 @@ Creating XML_Data table...
 Goodbye!
 C:\>
 
-
-```w
+```

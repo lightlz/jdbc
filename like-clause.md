@@ -20,7 +20,6 @@
 将下面的示例拷贝并粘帖到 JDBCExample.java 中，编译并运行它，如下所示-
 
 ``` 
-
 //STEP 1. Import required packages
 import java.sql.*;
 
@@ -111,24 +110,18 @@ public class JDBCExample {
    System.out.println("Goodbye!");
 }//end main
 }//end JDBCExample
-
-
 ```
 
 现在，让我们用下面的命令编译上面的代码-
 
 ``` 
-
 C:\>javac JDBCExample.java
 C:\>
-
-
 ```
 
 当你运行 **JDBCExample** 时，它将展示下面的结果-
 
 ```
-
 C:\>java JDBCExample
 Connecting to a selected database...
 Connected database successfully...
@@ -142,6 +135,4 @@ ID: 100, Age: 30, First: Zara, Last: Ali
 ID: 102, Age: 30, First: Zaid, Last: Khan
 Goodbye!
 C:\>
-
-
 ```

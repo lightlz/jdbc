@@ -71,7 +71,6 @@ conn.commit();
 下面的代码段提供了一个使用 PrepareStatement 对象批量更新的示例-
 
 ```
-
 // Create SQL statement
 String SQL = "INSERT INTO Employees (id, first, last, age) " +
              "VALUES(?, ?, ?, ?)";
@@ -108,8 +107,6 @@ int[] count = stmt.executeBatch();
 
 //Explicitly commit statements to apply changes
 conn.commit();
-
-
 ```
 
 为了更好地理解，建议研究学习**批处理-示例代码**。
