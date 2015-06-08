@@ -32,7 +32,6 @@
 在你准备使用 Statement 对象执行 SQL 语句之前，你需要使用  Connection 对象的 createStatement() 方法创建一个，如下面的示例所示-
 
 ```
-
 Statement stmt = null;
 try {
    stmt = conn.createStatement( );
@@ -44,8 +43,6 @@ catch (SQLException e) {
 finally {
    . . .
 }
-
-
 ``` 
 
 当你创建了一个 Statement 对象之后，你可以用它的三个执行方法的任一方法来执行 SQL 语句。
@@ -61,7 +58,6 @@ finally {
 简单的调用 close() 方法就可以完成这项工作。如果你关闭了  Connection 对象，那么它也会关闭 Statement 对象。然而，你应该始终明确关闭 Statement 对象，以确保真正的清除。
 
 ```
-
 Statement stmt = null;
 try {
    stmt = conn.createStatement( );
@@ -73,8 +69,6 @@ catch (SQLException e) {
 finally {
    stmt.close();
 }
-
-
 ```
 
 为了更好地理解，我们建议你研究学习 **Statement 示例教程**。
@@ -88,7 +82,6 @@ finally {
 ### 创建 PreparedStatement 对象
 
 ```
-
 PreparedStatement pstmt = null;
 try {
    String SQL = "Update Employees SET age = ? WHERE id = ?";
@@ -101,8 +94,6 @@ catch (SQLException e) {
 finally {
    . . .
 }
-
-
 ```
 
 JDBC 中所有的参数都被用 **？** 符号表示，这是已知的参数标记。在执行 SQL 语句之前，你必须赋予每一个参数确切的数值。
@@ -120,7 +111,6 @@ JDBC 中所有的参数都被用 **？** 符号表示，这是已知的参数标
 简单的调用 close() 方法可以完成这项工作。如果你关闭了 Connection  对象，那么它也会关闭 PreparedStatement 对象。然而，你应该始终明确关闭 PreparedStatement 对象，以确保真正的清除。
 
 ```
-
 PreparedStatement pstmt = null;
 try {
    String SQL = "Update Employees SET age = ? WHERE id = ?";
@@ -133,8 +123,6 @@ catch (SQLException e) {
 finally {
    pstmt.close();
 }
-
-
 ```
 
 为了更好地理解，让我们研究学习 **Prepare - 示例代码**
@@ -148,7 +136,6 @@ finally {
 假如你需要执行以下的 Oracle 存储过程-
 
 ```
-
 CREATE OR REPLACE PROCEDURE getEmpName 
    (EMP_ID IN NUMBER, EMP_FIRST OUT VARCHAR) AS
 BEGIN
@@ -156,14 +143,11 @@ BEGIN
    FROM Employees
    WHERE ID = EMP_ID;
 END;
-
-
 ```
 
 **注意：**上面的存储过程已经写入到 Oracle 数据库中，但我们正在使用 MySQL 数据库，那么我们可以在 MySQL 的 EMP 数据库中创建相同的存储过程。
 
 ```
-
 DELIMITER $$
 
 DROP PROCEDURE IF EXISTS `EMP`.`getEmpName` $$
@@ -176,8 +160,6 @@ BEGIN
 END $$
 
 DELIMITER ;
-
-
 ```
 
 三种类型的参数有： IN ， OUT 和 INOUT 。  PreparedStatement 对象只使用 IN 参数。  CallableStatement 对象可以使用所有的三个参数。
@@ -206,7 +188,6 @@ DELIMITER ;
 下面的代码片段展示了基于存储过程如何使用  **Connection.prepareCall()** 方法来实例化  **CallableStatement** 对象。
 
 ```
-
 CallableStatement cstmt = null;
 try {
    String SQL = "{call getEmpName (?, ?)}";
@@ -219,8 +200,6 @@ catch (SQLException e) {
 finally {
    . . .
 }
-
-
 ```
 
 SQL 的 String 变量使用参数占位符表示存储过程。
@@ -240,7 +219,6 @@ SQL 的 String 变量使用参数占位符表示存储过程。
 简单的调用 close() 方法可以完成这项工作。如果你关闭了 Connection 对象，那么它也会关闭 CallableStatement 对象。然而，你应该始终明确关闭 CallableStatement 对象，以确保真正的清除。
 
 ```
-
 CallableStatement cstmt = null;
 try {
    String SQL = "{call getEmpName (?, ?)}";
@@ -253,8 +231,6 @@ catch (SQLException e) {
 finally {
    cstmt.close();
 }
-
-
 ```
 
 为了更好地理解，我建议你研究学习 **Callable - 示例代码**

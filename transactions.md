@@ -15,10 +15,7 @@
 例如，如果有一个名为 conn 的 Connection 对象，以下的代码将关闭自动提交模式-
 
 ```
-
 conn.setAutoCommit(false);
-
-
 ```
 
 ## 提交和回滚
@@ -26,25 +23,18 @@ conn.setAutoCommit(false);
 当你完成了你的修改，并且要提交你的修改，可以在 connection 对象里调用 **commit（）** 方法，如下所示-
 
 ```
-
 conn.commit( );
-
-
 ```
 
 另外,用名为 conn 的连接回滚数据到数据库，使用如下所示的代码-
 
 ```
-
 conn.rollback( );
-
-
 ```
 
 下面的例子说明了如何使用提交和回滚对象-
 
 ```
-
 try{
    //Assume a valid connection object conn
    conn.setAutoCommit(false);
@@ -63,8 +53,6 @@ try{
    // If there is any error.
    conn.rollback();
 }
-
-
 ```
 
 在这种情况下，之前的 INSERT 语句不会成功，一切都将被回滚到最初状态。
@@ -86,7 +74,6 @@ Connection 对象有两个新的方法来管理还原点-
 下面的例子说明了如何使用 Savepoint 对象-
 
 ```
-
 try{
    //Assume a valid connection object conn
    conn.setAutoCommit(false);
@@ -108,8 +95,6 @@ try{
    // If there is any error.
    conn.rollback(savepoint1);
 }
-
-
 ```
 
 在这种情况下，之前的 INSERT 语句不会成功，一切都将被回滚到最初状态。

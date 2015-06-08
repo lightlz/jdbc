@@ -16,10 +16,8 @@
 使用标准的 JDBC 包，它允许你选择，插入，更新和删除 SQL 表中的数据，添加以下引用到您的源代码中-
 
 ```
-
 import java.sql.* ;  // for standard JDBC programs
 import java.math.* ; // for BigDecimal and BigInteger 
-
 
 ```
 
@@ -37,7 +35,6 @@ import java.math.* ; // for BigDecimal and BigInteger
 下面是使用 Class.forName() 来注册 Oracle 驱动程序的示例：
 
 ```
-
 try {
    Class.forName("oracle.jdbc.driver.OracleDriver");
 }
@@ -45,14 +42,11 @@ catch(ClassNotFoundException ex) {
    System.out.println("Error: unable to load driver class!");
    System.exit(1);
 }
-
-
 ```
 
 你可以使用 **getInstance()** 方法来解决不兼容的 JVM ，但你必须编写如下所示的两个额外的异常-
 
 ```
-
 try {
    Class.forName("oracle.jdbc.driver.OracleDriver").newInstance();
 }
@@ -66,8 +60,6 @@ catch(InstantiationException ex) {
    System.out.println("Error: unable to instantiate driver!");
    System.exit(3);
 }
-
-
 ```
 
 ### 方法（二） - DriverManager.registerDriver()
@@ -148,22 +140,17 @@ getConnection() 最常用的方式是需要你提供一个数据库 URL ，用�
 如果你有一台名为 amrood 的主机，它的 TCP / IP 地址 192.0.0.1，你的 Oracle 监听器被配置为监听端口 1521，数据库名称是 EMP ，然后完整的数据库 URL 是-
 
 ```
-
 jdbc:oracle:thin:@amrood:1521:EMP
-
 
 ```
 
 现在，你必须调用适当的用户名和密码以及 getConnection() 方法来获得一个 **Connection** 对象，如下所示：
 
 ```
-
 String URL = "jdbc:oracle:thin:@amrood:1521:EMP";
 String USER = "username";
 String PASS = "password"
 Connection conn = DriverManager.getConnection(URL, USER, PASS);
-
-
 ```
 
 ### 只使用数据库 URL
@@ -171,29 +158,20 @@ Connection conn = DriverManager.getConnection(URL, USER, PASS);
 第二种 DriverManager.getConnection() 方法调用的方式只需要数据库 URL 参数-
 
 ```
-
 DriverManager.getConnection(String url);
-
-
 ```
 
 然而，在这种情况下，数据库的 URL ，包括用户名和密码，将表现为以下的格式-
 
-```
-
+``
 jdbc:oracle:driver:username/password@database
-
-
 ```
 
 所以上述连接对象可以如下所示创建连接-
 
 ```
-
 String URL = "jdbc:oracle:thin:username/password@amrood:1521:EMP";
 Connection conn = DriverManager.getConnection(URL);
-
-
 ```
 
 ### 使用数据库 URL 和 Properties 对象
@@ -201,10 +179,7 @@ Connection conn = DriverManager.getConnection(URL);
 第三种 DriverManager.getConnection() 方法调用需要数据库 URL 和 Properties 对象-
 
 ```
-
 DriverManager.getConnection(String url, Properties info);
-
-
 ```
 
 Properties 对象保存了一组关键数值。它通过调用 getConnection() 方法，将驱动程序属性传递给驱动程序。
@@ -212,7 +187,6 @@ Properties 对象保存了一组关键数值。它通过调用 getConnection() �
 使用下面的代码可以建立与上述示例相同的连接-
 
 ```
-
 import java.util.*;
 
 String URL = "jdbc:oracle:thin:@amrood:1521:EMP";
@@ -221,8 +195,6 @@ info.put( "user", "username" );
 info.put( "password", "password" );
 
 Connection conn = DriverManager.getConnection(URL, info);
-
-
 ```
 
 ## 关闭JDBC连接
@@ -236,10 +208,7 @@ Connection conn = DriverManager.getConnection(URL, info);
 要关闭上面打开的连接，你应该调用 close() 方法，如下所示-
 
 ```
-
 conn.close();
-
-
 ```
 
 对你的数据库管理员来说，明确的关闭连接到 DBMS 的连接，是相当开心的事。

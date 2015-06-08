@@ -60,12 +60,9 @@
 通过以下步骤打开一个**命令提示符**并切换到安装目录下-
 
 ```
-
 C:\>
 C:\>cd Program Files\MySQL\bin
 C:\Program Files\MySQL\bin>
-
-
 ```
 
 **注意： mysqld.exe** 的路径会根据你系统上安装的路径而可能会有所不同。你也可以查看如何启动和停止你的数据库服务器文档。
@@ -75,23 +72,17 @@ C:\Program Files\MySQL\bin>
 通过以下步骤来启动数据库服务器，如果该数据库服务器没有运行。
 
 ```
-
 C:\Program Files\MySQL\bin>mysqld
 C:\Program Files\MySQL\bin>
-
-
 ```
 ### 步骤3#
 
 通过以下步骤来创建 **EMP** 数据库-
 
 ```
-
 C:\Program Files\MySQL\bin> mysqladmin create EMP -u root -p
 Enter password: ********
 C:\Program Files\MySQL\bin>
-
-
 ```
 
 ## 创建表格
@@ -103,12 +94,9 @@ C:\Program Files\MySQL\bin>
 通过以下步骤打开一个**命令提示符**并切换到安装目录下-
 
 ```
-
 C:\>
 C:\>cd Program Files\MySQL\bin
 C:\Program Files\MySQL\bin>
-
-
 ```
 
 
@@ -117,12 +105,9 @@ C:\Program Files\MySQL\bin>
 通过以下步骤登录到数据库。
 
 ```
-
 C:\Program Files\MySQL\bin>mysql -u root -p
 Enter password: ********
 mysql>
-
-
 ```
 
 ### 步骤3#
@@ -130,7 +115,6 @@ mysql>
 通过以下命令来创建 **Employee** 表-
 
 ```
-
 mysql> use EMP;
 mysql> create table Employees
     -> (
@@ -141,8 +125,6 @@ mysql> create table Employees
     -> );
 Query OK, 0 rows affected (0.08 sec)
 mysql>
-
-
 ```
 
 ### 创建数据记录#
@@ -150,7 +132,6 @@ mysql>
 最后，通过以下步骤你可以在 Employee 表中创建几条记录-
 
 ```
-
 mysql> INSERT INTO Employees VALUES (100, 18, 'Zara', 'Ali');
 Query OK, 1 row affected (0.05 sec)
 
@@ -164,8 +145,6 @@ mysql> INSERT INTO Employees VALUES (103, 28, 'Sumit', 'Mittal');
 Query OK, 1 row affected (0.00 sec)
 
 mysql>
-
-
 ```
 
 通过研究学习 **MySQL 教程**，可以完整的了解 MySQL 数据库。
