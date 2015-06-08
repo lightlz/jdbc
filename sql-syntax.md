@@ -10,14 +10,14 @@ SQL 支持你可能会使用到的任何数据库，它可以让你编写独立�
 
 ## 创建数据库
 
-CREATE DATABASE 语句用于创建一个新的数据库。语法是-
+CREATE DATABASE 语句用于创建一个新的数据库。语法是 -
 
 ```
 SQL> CREATE DATABASE DATABASE_NAME;
 ```
 
 ### 示例
-下面的 SQL 语句创建一个名为 EMP 的数据库-
+下面的 SQL 语句创建一个名为 EMP 的数据库 -
 
 ```
 SQL> CREATE DATABASE EMP;
@@ -25,7 +25,7 @@ SQL> CREATE DATABASE EMP;
 
 ## 删除数据库
 
-使用 DROP DATABASE 语句用于删除现有的数据库。语法是-
+使用 DROP DATABASE 语句用于删除现有的数据库。语法是 -
 
 ```
 SQL> DROP DATABASE DATABASE_NAME;
@@ -49,7 +49,7 @@ SQL> CREATE TABLE TABLE_NAME
 
 ### 示例
 
-下面的 SQL 语句创建一个含有四列名为 Employees 的表-
+下面的 SQL 语句创建一个含有四列名为 Employees 的表 -
 
 ```
 SQL> CREATE TABLE Employees
@@ -78,7 +78,7 @@ SQL> DROP TABLE Employees;
 ```
 
 ## INSERT 数据
-INSERT 的语法如下所示，其中 column1， column2 等数据出现在相应的列中 - 
+INSERT 的语法如下所示，其中 column1，column2 等数据出现在相应的列中 - 
 
 ```
 SQL> INSERT INTO table_name的VALUES（column1，column2，...）;
@@ -94,7 +94,7 @@ SQL> INSERT INTO Employees VALUES（100，18，'Zara'，'Ali'）;
 
 ## SELECT 数据
 
-SELECT 语句用于从数据库中检索数据。 SELECT 的语法-
+SELECT 语句用于从数据库中检索数据。SELECT 的语法 -
 
 ```
 SQL> SELECT column_name, column_name, ...
@@ -102,7 +102,7 @@ SQL> SELECT column_name, column_name, ...
      WHERE conditions;
 ```
 
-WHERE 子句可以使用 =, !=, <, >, <=, >=, BETWEEN 和 LIKE 这些比较操作符。
+WHERE 子句可以使用 =，!=，<，>，<=，>=，BETWEEN 和 LIKE 这些比较操作符。
 
 ### 示例
 
@@ -120,7 +120,7 @@ SQL> SELECT first, last, age FROM Employees WHERE first LIKE '%Zara%';
 
 ## UPDATE 数据
 
-UPDATE 语句用于更新数据。UPDATE 的语法-
+UPDATE 语句用于更新数据。UPDATE 的语法 -
 
 ```
 SQL> UPDATE table_name
@@ -128,11 +128,11 @@ SQL> UPDATE table_name
      WHERE conditions;
 ```
 
-WHERE 子句可以使用 =, !=, <, >, <=, >=, BETWEEN 和 LIKE 这些比较操作符。
+WHERE 子句可以使用=，!=，<，>，<=，>=，BETWEEN 和 LIKE 这些比较操作符。
 
 ### 示例
 
-下面的 SQL UPDATE 语句改变了 ID 是100的员工的age列的数据-
+下面的 SQL UPDATE 语句改变了 ID 是100的员工的age列的数据 -
 
 ```
 SQL> UPDATE Employees SET age=20 WHERE id=100;
@@ -146,7 +146,7 @@ DELETE 语句用于从表中删除数据。DELETE 的语法-
 SQL> DELETE FROM table_name WHERE conditions;
 ```
 
-WHERE 子句可以使用 =, !=, <, >, <=, >=, BETWEEN 和 LIKE 这些比较操作符。
+WHERE 子句可以使用=，!=，<，>，<=，>=，BETWEEN 和 LIKE 这些比较操作符。
 
 ### 示例
 
