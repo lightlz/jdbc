@@ -1,12 +1,12 @@
 # 结果集
 
-SQL 语句从数据库查询中获取数据，并将数据返回到结果集中。 SELECT 语句是一种标准的方法，它从一个数据库中选择行记录，并显示在一个结果集中。 *java.sql.ResultSet* 接口表示一个数据库查询的结果集。
+SQL 语句从数据库查询中获取数据，并将数据返回到结果集中。SELECT 语句是一种标准的方法，它从一个数据库中选择行记录，并显示在一个结果集中。 *java.sql.ResultSet* 接口表示一个数据库查询的结果集。
 
 一个 ResultSet 对象控制一个光标指向当前行的结果集。术语“结果集”是指包含在 ResultSet 对象中的行和列的数据。
-### 
+
 ResultSet 接口的方法可细分为三类-
 
-- **导航方法：**用于移动光标.
+- **导航方法：**用于移动光标。
 - **获取方法：**用于查看当前行被光标所指向的列中的数据。
 - **更新方法：**用于更新当前行的列中的数据。这些更新也会更新数据库中的数据。
 
@@ -18,11 +18,11 @@ JDBC 提供了连接方法通过下列创建语句来生成你所需的 ResultSe
 - **prepareStatement(String SQL, int RSType, int RSConcurrency);**
 - **prepareCall(String sql, int RSType, int RSConcurrency);**
 
-第一个参数表示 ResultSet 对象的类型，第二个参数是两个 ResultSet  常量之一，该常量用于判断该结果集是只读的还是可修改的。
+第一个参数表示 ResultSet 对象的类型，第二个参数是两个 ResultSet 常量之一，该常量用于判断该结果集是只读的还是可修改的。
 
 ## ResultSet 的类型
 
-可能的 RSType 如下所示。如果你不指定 ResultSet 类型，将自动获得的值是 TYPE_FORWARD_ONLY 。
+可能的 RSType 如下所示。如果你不指定 ResultSet 类型，将自动获得的值是 TYPE_FORWARD_ONLY。
 
 <table class="table table-bordered" border="1" cellpadding="5" cellspacing="0" width="100%">
 <tr>
@@ -45,7 +45,7 @@ JDBC 提供了连接方法通过下列创建语句来生成你所需的 ResultSe
 
 ## ResultSet 的并发性
 
-RSConcurrency 的值如下所示，如果你不指定并发类型，将自动获得的值是 CONCUR_READ_ONLY 。
+RSConcurrency 的值如下所示，如果你不指定并发类型，将自动获得的值是 CONCUR_READ_ONLY。
 
 <table class="table table-bordered" border="1" cellpadding="5" cellspacing="0" width="100%">
 <tr>
@@ -126,13 +126,13 @@ finally {
 <tr>
 <td>7</td>
 <td><b>public boolean previous() throws SQLException </b>
-<p>将光标移动到上一行，如果超过结果集的范围则返回 false 。</p>
+<p>将光标移动到上一行，如果超过结果集的范围则返回 false。</p>
 </td>
 </tr>
 <tr>
 <td>8</td>
 <td><b>public boolean next() throws SQLException </b>
-<p>将光标移动到下一行，如果是结果集的最后一行则返回 false 。</p>
+<p>将光标移动到下一行，如果是结果集的最后一行则返回 false。</p>
 </td>
 </tr>
 <tr>
@@ -155,7 +155,7 @@ finally {
 </tr>
 </table>
 
-为了更好地理解，让我们研究学习**导航示例代码**。
+为了更好地理解，让我们研究学习[**导航示例代码**](http://www.tutorialspoint.com/jdbc/navigate-result-sets.htm)。
 
 ## 查看结果集
 
@@ -166,7 +166,7 @@ ResultSet接口中含有几十种从当前行获取数据的方法。
 - 一个需要列名。
 - 一个需要列的索引。
 
-例如，如果你想查看的列包含一个int类型，你需要在 ResultSet 中调用  getInt() 方法-
+例如，如果你想查看的列包含一个 int 类型，你需要在 ResultSet 中调用  getInt()方法-
 
 <table class="table table-bordered" border="1" cellpadding="5" cellspacing="0" width="100%">
 <tr>
@@ -187,11 +187,11 @@ ResultSet接口中含有几十种从当前行获取数据的方法。
 </tr>
 </table>
 
-同样的，在 ResultSet 接口中还有获取八个 Java 原始类型的 get 方法，以及常见的类型，比如 java.lang.String，java.lang.Object 和  java.net.URL 。
+同样的，在 ResultSet 接口中还有获取八个 Java 原始类型的 get 方法，以及常见的类型，比如 java.lang.String，java.lang.Object 和 java.net.URL。
 
-也有用于获取 SQL 数据类型 java.sql.Date ， java.sql.Time ，  java.sql.Timestamp ， java.sql.Clob ， java.sql.Blob 中的方法。查看文档可以了解使用这些 SQL 数据类型的更多的信息。
+也有用于获取 SQL 数据类型 java.sql.Date， java.sql.Time，  java.sql.Timestamp， java.sql.Clob，java.sql.Blob 中的方法。查看文档可以了解使用这些 SQL 数据类型的更多的信息。
 
-为了更好地理解，让我们研究学习查看 - 示例代码。
+为了更好地理解，让我们研究学习查看-[示例代码](http://www.tutorialspoint.com/jdbc/viewing-result-sets.htm)。
 
 ## 更新的结果集
 
@@ -202,14 +202,14 @@ ResultSet 接口包含了一系列的更新方法，该方法用于更新结果�
 - 一个需要列名。
 - 一个需要列的索引。
 
-例如，要更新一个结果集的当前行的 String 列，你可以使用任一如下所示的 updateString（） 方法-
+例如，要更新一个结果集的当前行的 String 列，你可以使用任一如下所示的 updateString()方法-
 
 <table class="table table-bordered" border="1" cellpadding="5" cellspacing="0" width="100%">
 <tr>
 <th>S.N.</th><th style="width:95%">方法 &amp; 描述</th>
 </tr>
 <tr><td>1</td><td><b>public void updateString(int columnIndex, String s) throws SQLException</b>
-<p>将指定列的字符串的值改为 s 。</p>
+<p>将指定列的字符串的值改为 s。</p>
 </td>
 </tr>
 <tr>
@@ -220,7 +220,7 @@ ResultSet 接口包含了一系列的更新方法，该方法用于更新结果�
 </tr>
 </table>
 
-八个原始数据类型都有其更新方法，比如 String ， Object ， URL ，和在 java.sql 包中的 SQL 数据类型。
+八个原始数据类型都有其更新方法，比如 String，Object，URL，和在 java.sql 包中的 SQL 数据类型。
 
 更新结果集中的行将改变当前行的列中的 ResultSet 对象，而不是基础数据库中的数据。要更新数据库中一行的数据，你需要调用以下的任一方法-
 
@@ -261,4 +261,4 @@ ResultSet 接口包含了一系列的更新方法，该方法用于更新结果�
 </tr>
 </table>
 
-为了更好地理解，建议研究学习**更新 - 示例代码**。
+为了更好地理解，建议研究学习[**更新 - 示例代码**](http://www.tutorialspoint.com/jdbc/updating-result-sets.htm)。
