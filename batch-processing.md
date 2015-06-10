@@ -4,9 +4,14 @@
 
 当你一次发送多个 SQL 语句到数据库时，可以减少通信的资源消耗，从而提高了性能。
 
-- JDBC 驱动程序不一定支持该功能。你可以使用  *DatabaseMetaData.supportsBatchUpdates()* 方法来确定目标数据库是否支持批处理更新。如果你的JDBC驱动程序支持此功能，则该方法返回值为 true 。
-- Statement ， PreparedStatement 和 CallableStatement 的  **addBatch（）** 方法用于添加单个语句到批处理。 **executeBatch()** 方法用于启动执行所有组合在一起的语句。
+- JDBC 驱动程序不一定支持该功能。你可以使用  *DatabaseMetaData.supportsBatchUpdates()* 方法来确定目标数据库是否支持批处理更新。如果你的JDBC驱动程序支持此功能，则该方法返回值为 true。
+
+- Statement，PreparedStatement 和 CallableStatement 的  **addBatch()** 方法用于添加单个语句到批处理。
+
+- **executeBatch()** 方法用于启动执行所有组合在一起的语句。
+
 - **executeBatch()** 方法返回一个整数数组，数组中的每个元素代表了各自的更新语句的更新数目。
+
 - 正如你可以添加语句到批处理中，你也可以用 **clearBatch()** 方法删除它们。此方法删除所有用 addBatch() 方法添加的语句。但是，你不能有选择性地选择要删除的语句。
 
 ## 批处理和 Statement 对象
@@ -14,7 +19,7 @@
 使用 Statement 对象来使用批处理所需要的典型步骤如下所示-
 
 - 使用 *createStatement()* 方法创建一个 Statement 对象。
-- 使用 *setAutoCommit()* 方法将自动提交设为 false 。
+- 使用 *setAutoCommit()* 方法将自动提交设为 false。
 - 被创建的 Statement 对象可以使用 *addBatch()* 方法来添加你想要的所有SQL语句。
 - 被创建的 Statement 对象可以用 *executeBatch()* 将所有的 SQL  语句执行。
 - 最后，使用 *commit()* 方法提交所有的更改。
@@ -55,7 +60,7 @@ int[] count = stmt.executeBatch();
 conn.commit();
 ```
 
-为了更好地理解，建议研究学习**批处理-示例代码**。
+为了更好地理解，建议研究学习[**批处理-示例代码**](http://www.tutorialspoint.com/jdbc/statement-batching-example.htm)。
 
 ## 批处理和 PrepareStatement 对象
 
@@ -63,7 +68,7 @@ conn.commit();
 
 - 使用占位符创建 SQL 语句。
 - 使用任一 *prepareStatement()* 方法创建 prepareStatement 对象。
-- 使用 *setAutoCommit()* 方法将自动提交设为 false 。
+- 使用 *setAutoCommit()* 方法将自动提交设为 false。
 - 被创建的 Statement 对象可以使用 *addBatch()* 方法来添加你想要的所有 SQL 语句。
 - 被创建的 Statement 对象可以用 *executeBatch()* 将所有的 SQL  语句执行。
 - 最后，使用 *commit()* 方法提交所有的更改。
@@ -109,4 +114,4 @@ int[] count = stmt.executeBatch();
 conn.commit();
 ```
 
-为了更好地理解，建议研究学习**批处理-示例代码**。
+为了更好地理解，建议研究学习[**批处理-示例代码**](http://www.tutorialspoint.com/jdbc/preparestatement-batching-example.htm)。
