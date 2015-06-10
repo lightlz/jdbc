@@ -1,6 +1,6 @@
 # 存储过程
 
-在前面的 **JDBC - Statement 对象**这章里，我们已经学习了如何在   JDBC 中使用**存储过程**。本章与该章有些类似，但本章将告诉你有关  JDBC 转义语法的额外信息。
+在前面的 **JDBC-Statement 对象**这章里，我们已经学习了如何在   JDBC 中使用**存储过程**。本章与该章有些类似，但本章将告诉你有关  JDBC 转义语法的额外信息。
 
 正如一个 Connection 对象创建了 Statement 和 PreparedStatement  对象，它也创造了在数据库中被执行调用的 CallableStatement 对象。
 
@@ -18,7 +18,7 @@ BEGIN
 END;
 ```
 
-**注意：**上面的存储过程是在 Oracle 使用的，但我们使用的是 MySQL  数据库，所以我们在 MySQL 的环境下需要重新写出相同功能的代码，下面的代码是在 EMP 数据库中创建相同功能的代码-
+**注意：**上面的存储过程是在 Oracle 使用的，但我们使用的是 MySQL 数据库，所以我们在 MySQL 的环境下需要重新写出相同功能的代码，下面的代码是在 EMP 数据库中创建相同功能的代码-
 
 ```
 DELIMITER $$
@@ -35,7 +35,7 @@ END $$
 DELIMITER ;
 ```
 
-当前有三种类型的参数： IN ， OUT 和 INOUT 。 PreparedStatement  对象只能使用 IN 参数。  CallableStatement 对象可以使用所有的三种类型。
+当前有三种类型的参数：IN，OUT 和 INOUT。PreparedStatement  对象只能使用 IN 参数。CallableStatement 对象可以使用所有的三种类型。
 
 下面是三种类型参数的定义-
 
@@ -75,7 +75,7 @@ DELIMITER ;
 
 </table>
 
-下面的代码片段展示了如何使用 **Connection.prepareCall（）** 方法实现一个基于上述存储过程的 **CallableStatement** 对象-
+下面的代码片段展示了如何使用 **Connection.prepareCall()** 方法实现一个基于上述存储过程的 **CallableStatement** 对象-
 
 ```
 CallableStatement cstmt = null;
@@ -96,17 +96,17 @@ finally {
 
 使用 CallableStatement 对象就像使用 PreparedStatement 对象。在执行该语句前，你必须将值绑定到所有的参数，否则你将收到一个 SQL 异常。
 
-如果你有 IN 参数，只要按照适用于 PreparedStatement 对象相同的规则和技巧;用 setXXX（） 方法来绑定对应的 Java 数据类型。
+如果你有 IN 参数，只要按照适用于 PreparedStatement 对象相同的规则和技巧；用 setXXX()方法来绑定对应的 Java 数据类型。
 
-当你使用 OUT 和 INOUT 参数就必须采用额外的 CallableStatement 方法： registerOutParameter（） 。 registerOutParameter（） 方法将 JDBC 数据类型绑定到存储过程返回的数据类型。
+当你使用 OUT 和 INOUT 参数就必须采用额外的 CallableStatement 方法：registerOutParameter()。registerOutParameter() 方法将 JDBC 数据类型绑定到存储过程返回的数据类型。
 
-一旦你调用了存储过程，你可以用适当的 getXXX（） 方法从 OUT 参数参数中检索数值。这种方法将检索出来的 SQL 类型的值映射到 Java 数据类型。
+一旦你调用了存储过程，你可以用适当的 getXXX()方法从 OUT 参数参数中检索数值。这种方法将检索出来的 SQL 类型的值映射到 Java 数据类型。
 
 ## 关闭 CallableStatement 对象
 
 正如你关闭其它的 Statement 对象，出于同样的原因，你也应该关闭  CallableStatement 对象。
 
-close（） 方法简单的调用就可以完成这项工作。如果你先关闭了  Connection 对象，那么它也会关闭 CallableStatement 对象。然而，你应该始终明确关闭 CallableStatement 对象，以确保该对象被彻底关闭。
+close()方法简单的调用就可以完成这项工作。如果你先关闭了  Connection 对象，那么它也会关闭 CallableStatement 对象。然而，你应该始终明确关闭 CallableStatement 对象，以确保该对象被彻底关闭。
 
 ```
 CallableStatement cstmt = null;
@@ -123,7 +123,7 @@ finally {
 }
 ```
 
-为了更好的理解，建议研究学习**回收-示例代码**。
+为了更好的理解，建议研究学习[**回收-示例代码**](http://www.tutorialspoint.com/jdbc/callablestatement-object-example.htm)。
 
 ## JDBC 的 SQL 转义语法
 
@@ -137,7 +137,7 @@ finally {
 
 当你在编程的时候，你会发现以下的这些转义序列会非常有用的-
 
-### d ,  t ,  ts 关键字
+### d，t，ts 关键字
 
 它们能帮助确定日期，时间和时间戳的文字。众所周知，没有两个数据库管理系统的时间和日期的表现方式是相同的。该转义语法告诉驱动程序以目标数据库的格式来呈现日期或时间。例如-
 
@@ -187,7 +187,7 @@ stmt.execute(sql);
 
 ### fn 关键字
 
-该关键字代表在数据库管理系统中使用标量函数。例如，你可以使用 SQL 的   length 函数来计算字符串的长度-
+该关键字代表在数据库管理系统中使用标量函数。例如，你可以使用 SQL 的 length 函数来计算字符串的长度-
 
 ```
 {fn length('Hello World')}
