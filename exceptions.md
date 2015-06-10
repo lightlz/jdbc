@@ -2,13 +2,13 @@
 
 异常处理可以允许你处理一个异常情况，例如可控方式的程序定义错误。
 
-当异常情况发生时，将抛出一个异常。抛出这个词意味着当前执行的程序停止，控制器被重定向到最近的适用的 catch 子句。如果没有适用的 catch  子句存在，那么程序执行被终止。
+当异常情况发生时，将抛出一个异常。抛出这个词意味着当前执行的程序停止，控制器被重定向到最近的适用的 catch 子句。如果没有适用的 catch 子句存在，那么程序执行被终止。
 
-JDBC 的异常处理是非常类似于 Java 的异常处理，但对于 JDBC ，最常见的异常是 **java.sql.SQLException**。
+JDBC 的异常处理是非常类似于 Java 的异常处理，但对于 JDBC，最常见的异常是 **java.sql.SQLException**。
 
 ## SQLException 方法
 
-SQLException 异常在驱动程序和数据库中都可能出现。当出现这个异常时， SQLException 类型的对象将被传递到 catch 子句。
+SQLException 异常在驱动程序和数据库中都可能出现。当出现这个异常时，SQLException 类型的对象将被传递到 catch 子句。
 
 传递的 SQLException 对象具有以下的方法，以下的方法可用于检索该异常的额外信息-
 
@@ -27,7 +27,7 @@ SQLException 异常在驱动程序和数据库中都可能出现。当出现这�
 </tr>
 <tr>
 <td>getSQLState( )</td>
-<td>获取 XOPEN SQLstate 字符串。对于 JDBC 驱动程序错误，使用该方法不能返回有用的信息。对于数据库错误，返回第五位的 XOPEN SQLstate 代码。该方法可以返回 null 。</td>
+<td>获取 XOPEN SQLstate 字符串。对于 JDBC 驱动程序错误，使用该方法不能返回有用的信息。对于数据库错误，返回第五位的 XOPEN SQLstate 代码。该方法可以返回 null。</td>
 </tr>
 <tr>
 <td>getNextException( )</td>
