@@ -2,6 +2,6 @@
     "name": "JDBC 指南",
     "introduction": "JDBC API 是一个 Java API，它可以访问任何类型的表格数据，特别是可以访问存储在关系数据库里的数据。本指南是 JDBC 官方文档 JDBC Tutorial 的中文翻译版本。本教程是给那些想详细了解 JDBC 框架以及想实际使用这些框架的 Jave 程序员编写的。",
     "title": "JDBC 指南 - 极客学院 Wiki",
-    "keywords": “JDBC 教程,JDBC 连接数据库“,
+    "keywords": "JDBC 教程,JDBC 连接数据库",
     "description": "JDBC API 是一个 Java API，它可以访问任何类型的表格数据，特别是可以访问存储在关系数据库里的数据。本指南是 JDBC 官方文档 JDBC Tutorial 的中文翻译版本。本教程是给那些想详细了解 JDBC 框架以及想实际使用这些框架的 Jave 程序员编写的。"
 }
